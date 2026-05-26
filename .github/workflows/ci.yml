@@ -17,5 +17,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
-      - run: pip install -e ".[dev]" 2>/dev/null || pip install -e .
+      - run: pip install -e ".[dev]" || pip install -e . && pip install pytest
       - run: python -m pytest tests/ -v || python -m pytest --co -q
